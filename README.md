@@ -1,6 +1,6 @@
 # CircleCI Usage Report Generator for Specific Timeframe
 
-This tool generates usage reports for all organizations on a shared CircleCI plan for a specific timeframe.
+This tool generates usage reports for all organizations on a shared CircleCI plan for a specific timeframe. Please note that the APi endpoint used to retrieve organizations on a shared plan is not supported and is not guarenteed. It may be deprecated without notice. 
 
 ## Features
 
@@ -85,7 +85,7 @@ If you get an error about date format, double-check that your dates match the re
 If you have a very large number of organizations, the job might take longer to complete. The script has a 30-attempt polling limit with progressive backoff up to 5 minutes between attempts.
 
 ### API Rate Limits
-If you encounter rate limit errors, you might need to increase the delays between API calls or run the script during off-peak hours.
+If you encounter rate limit errors, you might need to increase the delays between API calls or run the script after 24 hours. CircleCI currently supports 10 requests per day. 
 
 ## Data Analysis
 
@@ -94,10 +94,3 @@ The generated CSV can be analyzed using:
 - Python with pandas and matplotlib for more advanced analysis
 - Data visualization tools like Tableau or Power BI
 
-## License
-
-MIT
-
-## Contributing
-
-Contributions are welcome! Please feel free to submi
